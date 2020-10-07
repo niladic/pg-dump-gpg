@@ -12,7 +12,7 @@ ENV PG_DUMP_OPTS ""
 RUN apt-get update && apt-get install -y gnupg python-pip
 RUN pip install --upgrade s3cmd==2.0.2
 
-ADD backup.sh /
+ADD backup/backup.sh /
 RUN chmod +x /backup.sh
 
 CMD ["sh", "/backup.sh"]
